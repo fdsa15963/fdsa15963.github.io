@@ -182,7 +182,7 @@ body nav{
 
 #buttonSunMoon{
     display: flex;
-    background-image: url("/images/moon.svg"), url("/images/sun.svg");
+    background-image: url("images/moon.svg"), url("images/sun.svg");
     background-repeat: no-repeat;
     background-size: 18px 18px;
     background-position: 0px, 22px;
