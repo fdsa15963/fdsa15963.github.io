@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-sale=1.0" />
+        <title>聯絡我們</title>
+        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="icon" href="/images/icon.ico">
+    </head>
+    <body>
+        <nav>
+            <div class="menu_bar">
+                <ul>
+                </ul>
+
+                <div class="menu_bar_menu"></div>
+
+                <div class="member">
+                    <div id="lightSwitch">
+                        <div id="buttonSunMoon">
+                            <div id="lightSwitchButton" data-theme="light"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+
+        <nav class="menu_bar_right_nav"></nav>
+        
+        <nav class="main_nav_frame">
+            <nav class="main_nav">
+                <div class="contact_us_area">
+                    
+                    <form action="/contact" method="post" onsubmit="submitButtonOnSubmit();">
+                        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                        <div class="contact_left">
+                            <div class="contact_title">
+                                <div>REQUIREMENTS</div>
+                                <div>需求說明</div>
+                            </div>
+    
+                            <div class="contact_input">
+                                <label for="requirement_type">您的需求類型<span> *</span></label>
+                                <select name="requirement_type" id="requirement_type">
+                                    <option value="limits_of_authority">權限申請</option>
+                                    <option value="html_error">網頁錯誤</option>
+                                    <option value="feedback">意見回饋</option>
+                                    <option value="other">其他</option>
+                                </select>
+                                
+                                <label for="requirement_text">請敘述您的需求<span> *</span></label>
+                                <textarea name="requirement_text" id="requirement_text" cols="30" rows="10" placeholder="輸入文字" required></textarea>
+                                
+                                
+                            </div>
+                        </div>
+    
+                        <div class="contact_right">
+                            <div class="contact_title">
+                                <div>INFORMATION</div>
+                                <div>聯繫資訊</div>
+                            </div>
+    
+                            <div class="contact_input">
+                                <label for="name"><img src="/images/name.svg">聯絡人姓名<span> *</span></label>
+                                <input type="text" name="name" id="name" placeholder="您的姓名" required>
+                                <label for="phone_number"><img src="/images/phone.svg">聯絡人電話</label>
+                                <input type="tel" name="phone_number" id="phone_number" placeholder="範例0912-345-678">
+                                <label for="email"><img src="/images/mail.svg">聯絡人信箱</label>
+                                <input type="email" name="email" id="email" placeholder="範例123@gmail.com">
+                                
+                                <input type="submit" value="送出" class="submit_button" {% if submit != undefined %} submit={{submit}} {% endif %}>
+                                
+                            </div>
+    
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </nav> 
+        
+
+        <script src="/static/script.js"></script>
+        <script>
+            submitButton = document.querySelector(".submit_button");
+
+            function submitButtonOnSubmit(){
+                submitButton.setAttribute("disabled", "");
+
+                setTimeout(function(){
+                    submitButton.removeAttribute("disabled");
+                }, 5000);
+            }
+            
+
+            if(submitButton.getAttribute("submit") == "successed"){
+                window.alert("成功傳送，請稍待我們的回覆！");
+                submitButton.removeAttribute("submit");
+            }
+        </script>
+        
+    </body>
+</html>
