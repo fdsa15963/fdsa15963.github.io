@@ -51,7 +51,7 @@ function getCookie(cname) {
 
 //menu選單
 
-fetch("https://fdsa15963.github.io/menu.json").then(response=>{
+fetch("/menu.json").then(response=>{
   return response.json();
 }).then(data=>{
   let menu = document.querySelector(".menu_bar ul");
