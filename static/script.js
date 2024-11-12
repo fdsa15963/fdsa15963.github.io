@@ -49,6 +49,42 @@ function getCookie(cname) {
     return "";
 }
 
+//menu選單
+
+fetch("https://fdsa15963.github.io/menu.json").then(response=>{
+  return response.json();
+}).then(data=>{
+  let menu = document.querySelector(".menu_bar ul");
+  
+  let HTML = "";
+  
+  for(let i = 0; i < data.length; i++){
+    let href = data[i]["href"];
+
+    if(window.location.href.endsWith(href) && href != "#"){
+      HTML += 
+      '<li>' +
+        '<a href="' + href + '">' + data[i]["ch"] + '</a>' +
+      '</li>';
+
+    }else{
+      HTML += 
+      '<li>' +
+        '<a href="' + href + '">' + 
+          '<span class="enTxt">' + data[i]["en"] +'</span>' +
+          '<span class="chTxt">' + data[i]["ch"] +'</span>' +
+        '</a>' +
+      '</li>';
+    }
+
+
+    
+  }
+
+  menu.innerHTML = HTML;
+  
+});
+
 
 
 //menu小選單
@@ -92,4 +128,5 @@ menu.addEventListener("click", function(){
     menuBarRightNav.innerHTML = "";
   });
 });
+
 
