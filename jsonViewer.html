@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-sale=1.0" />
+        <title>JSON預覽器</title>
+        <link rel="icon" href="./images/icon.ico">
+        <link rel="stylesheet" href="style.css" />
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="jquery.json-viewer.js"></script>
+		<link href="jquery.json-viewer.css" type="text/css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <nav>
+            <div class="menu_bar">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <span class="enTxt">HOME</span>
+                            <span class="chTxt">首頁</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/elearn">
+                            <span class="enTxt">ELEARN</span>
+                            <span class="chTxt">e學中心</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="/ifs">
+                            <span class="enTxt">IFS</span>
+                            <span class="chTxt">智能服務網</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="enTxt">FOUR</span>
+                            <span class="chTxt">第四頁</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="enTxt">FIVE</span>
+                            <span class="chTxt">第五頁</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/json_viewer">JSON預覽器</a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            <span class="enTxt">CONTACT</span>
+                            <span class="chTxt">聯絡我們</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="menu_bar_menu"></div>
+
+                <div class="member">
+                    <div id="lightSwitch">
+                        <div id="buttonSunMoon">
+                            <div id="lightSwitchButton" data-theme="light"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+
+        <nav class="menu_bar_right_nav"></nav>
+
+        <nav class="main_nav_frame">
+            <nav class="main_nav">
+                <div class="json_viewer_left_area">
+
+                    <div class="json_viewer_title">Json - Edit</div>
+
+                    <div class="json_viewer_button_area">
+                        <button class="json_white_button" onclick="formatJson(false);">Format Json</button>
+                        <button class="json_white_button" onclick="formatJson(true);">Format Json (decode)</button>
+                        <button class="json_white_button" onclick="removeJsonWhiteSpace();">Remove White Space</button>
+                    </div>
+
+                    <div class="json_viewer_button_area">
+                        <button class="json_white_button" onclick="sortJson();">Sort Json</button>
+                        <button class="json_white_button">---</button>
+                        <button class="json_white_button">---</button>
+                    </div>
+
+                    <textarea class="json_input" autocomplete="off"></textarea>
+                    
+                </div>
+
+                <div class="json_viewer_right_area">
+
+                    <div class="json_viewer_title">Json - Viewer</div>
+
+                    <div class="json_viewer_button_area">
+                        <button class="json_black_button"id="btn-json-viewer">JSON 轉換</button>
+                        <button class="json_white_button" onclick="openJson();">預覽展開</button>
+                        <button class="json_white_button" onclick="closeJson();">預覽摺疊</button>
+                    </div>
+
+                    <pre id="json-renderer"></pre>
+                    
+                </div>
+        
+                
+            </nav>
+
+        </nav>
+        <script src="script.js"></script>
+        <script src="json.js"></script>
+        
+    </body>
+</html>
