@@ -66,10 +66,10 @@ menu.addEventListener("click", function(){
         '<a href="/">首頁</a>' +
       '</li>' +
       '<li>' +
-        '<a href="/elearn">e學中心</a>' +
+        '<a href="/jsonViewer.html">JsonViewer</a>' +
       '</li>' +
       '<li>' +
-        '<a href="/ifs">智能服務網</a>' +
+        '<a href="/ifs">3</a>' +
       '</li>' +
       '<li>' +
         '<a href="">4</a>' +
@@ -78,7 +78,7 @@ menu.addEventListener("click", function(){
         '<a href="">5</a>' +
       '</li>' +
       '<li>' +
-        '<a href="/json_viewer">JSON_VIEWER</a>' +
+        '<a href="#">6</a>' +
       '</li>' +
       '<li>' +
         '<a href="/contact">聯絡我們</a>' +
