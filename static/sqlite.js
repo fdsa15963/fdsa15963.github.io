@@ -22,7 +22,7 @@ document.querySelector('.sqlite_input').addEventListener('change', async (event)
         // 加載 SQLite 資料庫
         db = new SQL.Database(new Uint8Array(arrayBuffer));
         output.innerHTML = `<div style="padding: 10px;">資料庫已載入！</div>`;
-        document.querySelector(".sqlite_export_db").removeAttribute("disable");
+        document.querySelector(".sqlite_export_db").disabled = false;
 
 
         // 顯示資料表名稱
