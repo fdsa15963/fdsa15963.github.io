@@ -120,6 +120,7 @@ function renderTable(result) {
         row.forEach(cell => {
             const td = document.createElement('td');
             td.textContent = cell !== null ? cell : 'NULL';
+            td.setAttribute("title", td.textContent);
             dataRow.appendChild(td);
         });
         tbody.appendChild(dataRow);
