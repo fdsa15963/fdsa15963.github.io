@@ -11,7 +11,7 @@
     --area-background: #fcfcfc;
     --title-font-color: #333333;
     --en-title-font-color:#666666;
-    --table-head-background: #809186;
+    --table-head-background: #c9e0b6;
     --table-list-odd-background: #eaefe6;
     --course-list-red-font: #f78da7;
     --button-background: #809186;
@@ -33,7 +33,7 @@ html[data-theme=dark]{
     --body-font-opposite-color: #666666;
     --menu-background: #363636;
     --menu-select-font-color: #96b97d;
-    --table-head-background: #CFCFD1;
+    --table-head-background: #5f5f62;
     --bulletin-font-color: #f2dede;
     --bulletin-background-color: #7c3331;
     --area-background: #242424;
@@ -571,7 +571,7 @@ body nav{
 
 .sqlite_output thead > tr > th{
     padding: 10px;
-    background-color: var(--area-background);
+    background-color: var(--table-head-background);
 }
 
 .sqlite_output tbody > tr > td{
