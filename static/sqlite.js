@@ -1,4 +1,5 @@
 let db; // 儲存 SQLite 資料庫的變數
+let fileName = "exported_database.db";
 const sqliteTable = document.querySelector('.sqlite_table');
 const output = document.querySelector('.sqlite_output');
 
@@ -9,6 +10,7 @@ document.querySelector('.sqlite_input').addEventListener('change', async (event)
         return;
     }
 
+    fileName = file.name;
     output.innerHTML = "正在載入資料庫...";
 
     try {
@@ -145,7 +147,7 @@ document.querySelector(".sqlite_export_db").addEventListener('click', () => {
 
     const link = document.createElement('a');
     link.href = url;
-    link.download = "exported_database.db";
+    link.download = fileName;
     link.click();
 
     URL.revokeObjectURL(url);
