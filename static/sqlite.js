@@ -70,11 +70,11 @@ document.querySelector('.sqlite_commit_run').addEventListener('click', () => {
         if (result.length > 0) {
             renderTable(result[0]);
         } else {
-            output.innerHTML = "<p>查詢完成，但沒有返回結果。</p>";
+            output.innerHTML = `<div style="padding: 10px">查詢完成，但沒有返回結果。</div>`;
         }
     } catch (error) {
         console.error(error);
-        output.innerHTML = `<p>執行 SQL 語法時發生錯誤：${error.message}</p>`;
+        output.innerHTML = `<div style="padding: 10px">執行 SQL 語法時發生錯誤：${error.message}</div>`;
     }
 });
 
@@ -90,12 +90,12 @@ function loadTable(tableName) {
         if (result.length > 0) {
             renderTable(result[0]);
         } else {
-            output.innerHTML = `<p>資料表 ${tableName} 沒有任何資料。</p>`;
+            output.innerHTML = `<div style="padding: 10px">資料表 ${tableName} 沒有任何資料。</div>`;
         }
 
     } catch (error) {
         console.error(error);
-        output.innerHTML = `<p>載入資料表時發生錯誤：${error.message}</p>`;
+        output.innerHTML = `<div style="padding: 10px">載入資料表時發生錯誤：${error.message}</div>`;
     }
 }
 
