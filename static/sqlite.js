@@ -21,7 +21,7 @@ document.querySelector('.sqlite_input').addEventListener('change', async (event)
 
         // 加載 SQLite 資料庫
         db = new SQL.Database(new Uint8Array(arrayBuffer));
-        output.innerHTML = `<p style="padding: 10px;">資料庫已載入！</p>`;
+        output.innerHTML = `<div style="padding: 10px;">資料庫已載入！</div>`;
 
 
         // 顯示資料表名稱
@@ -48,7 +48,7 @@ document.querySelector('.sqlite_input').addEventListener('change', async (event)
         }
     } catch (error) {
         console.error(error);
-        output.innerHTML = `<p style="padding: 10px;">載入資料庫時發生錯誤： ${error.message}</p>`;
+        output.innerHTML = `<div style="padding: 10px;">載入資料庫時發生錯誤： ${error.message}</div>`;
     }
 });
 
