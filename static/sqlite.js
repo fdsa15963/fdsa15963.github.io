@@ -9,7 +9,14 @@ fetch("./resource/sqlite_prompt.json").then((response)=>{
     let buttonDiv = document.querySelector(".sqlite_button_div");
 
     data.forEach((d)=>{
-        console.log(d);
+        let button = document.createElement("button");
+
+        button.textContent = d.name;
+        button.addEventListener('click', ()=>{
+            document.querySelector(".sqlite_commit").textContent = d.examples;
+        });
+
+        buttonDiv.appendChild(button);
     });
 }).catch((error=>{
 
