@@ -496,7 +496,7 @@ body nav{
 }
 
 .sqlite_sidebar{
-    width: 300px; /* 設定左側欄位的固定寬度 */
+    width: 250px; /* 設定左側欄位的固定寬度 */
     border-right: 1px solid #ddd;
     padding: 0 10px 20px 10px;
     box-sizing: border-box;
@@ -548,8 +548,8 @@ body nav{
     box-sizing: border-box;
 }
 
-.sqlite_button_div{
-    margin-top: 10px;
+.sqlite_button_div > button{
+    margin: 5px;
 }
 
 .sqlite_output{
