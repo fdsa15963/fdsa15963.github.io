@@ -22,6 +22,7 @@ document.querySelector('.sqlite_input').addEventListener('change', async (event)
         // 加載 SQLite 資料庫
         db = new SQL.Database(new Uint8Array(arrayBuffer));
         output.innerHTML = `<div style="padding: 10px;">資料庫已載入！</div>`;
+        document.querySelector(".sqlite_export_db").removeAttribute("disable");
 
 
         // 顯示資料表名稱
@@ -130,3 +131,22 @@ function renderTable(result) {
     table.appendChild(tbody);
     output.appendChild(table);
 }
+
+//資料庫匯出
+document.querySelector(".sqlite_export_db").addEventListener('click', () => {
+    if (!db) {
+        alert("沒有載入資料庫！");
+        return;
+    }
+
+    const binaryArray = db.export(); // 將資料庫匯出為二進位格式
+    const blob = new Blob([binaryArray], { type: "application/octet-stream" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = "exported_database.db";
+    link.click();
+
+    URL.revokeObjectURL(url);
+});
