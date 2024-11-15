@@ -10,9 +10,9 @@
         "href": "/jsonViewer.html"
     },
     {
-        "ch": "第三頁",
-        "en": "THREE",
-        "href": "#"
+        "ch": "SQLite預覽器",
+        "en": "SQLiteViewer",
+        "href": "/sqlite.html"
     },
     {
         "ch": "第四頁",

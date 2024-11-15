@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-sale=1.0" />
+        <title>SQLite預覽器</title>
+        <link rel="icon" href="/images/icon.ico">
+        <link rel="stylesheet" href="/static/style.css" />
+        
+    </head>
+
+    <body>
+        <nav>
+            <div class="menu_bar">
+                <ul></ul>
+
+                <div class="menu_bar_menu"></div>
+
+                <div class="member">
+                    <div id="lightSwitch">
+                        <div id="buttonSunMoon">
+                            <div id="lightSwitchButton" data-theme="light"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+
+        <nav class="menu_bar_right_nav"></nav>
+
+        <nav class="main_nav_frame">
+            <nav class="main_nav">
+
+                <div class="sqlite_sidebar">
+                    <h3>匯入資料表</h3>
+                    <input type="file" class="sqlite_input" accept=".sqlite,.db" />
+                    <h4>資料表列表</h4>
+                    <ul id="sqlite_table"></ul>
+                </div>
+                <div class="sqlite_main">
+                    <h1>SQLite Viewer</h1>
+                    <textarea class="sqlite_commit" placeholder="輸入 SQL 語法，例如：SELECT * FROM table_name;"></textarea>
+                    <button id="sqlite_commit_run">執行 SQL 語法</button>
+                    <div class="sqlite_output"></div>
+                </div>
+
+        
+                
+            </nav>
+
+        </nav>
+        <script src="/static/script.js"></script>
+        
+    </body>
+</html>
