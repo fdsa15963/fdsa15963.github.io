@@ -1,0 +1,50 @@
+[
+    {
+      "name": "SELECT",
+      "examples": "SELECT * FROM table_name;\nSELECT column1, column2 FROM table_name;\nSELECT * FROM table_name WHERE column1 = 'value';\nSELECT * FROM table_name LIMIT 10;"
+    },
+    {
+      "name": "INSERT",
+      "examples": "INSERT INTO table_name (column1, column2) VALUES ('value1', 'value2');\nINSERT INTO table_name (column1, column2) VALUES ('value1', 'value2'), ('value3', 'value4');"
+    },
+    {
+      "name": "UPDATE",
+      "examples": "UPDATE table_name SET column1 = 'new_value' WHERE column2 = 'value';"
+    },
+    {
+      "name": "DELETE",
+      "examples": "DELETE FROM table_name WHERE column1 = 'value';"
+    },
+    {
+      "name": "CREATE TABLE",
+      "examples": "CREATE TABLE table_name (column1 TEXT, column2 INTEGER, column3 REAL);"
+    },
+    {
+      "name": "DROP TABLE",
+      "examples": "DROP TABLE IF EXISTS table_name;"
+    },
+    {
+      "name": "ALTER TABLE",
+      "examples": "ALTER TABLE table_name ADD COLUMN new_column TEXT;\nALTER TABLE table_name RENAME TO new_table_name;"
+    },
+    {
+      "name": "CREATE INDEX",
+      "examples": "CREATE INDEX index_name ON table_name (column1);"
+    },
+    {
+      "name": "DROP INDEX",
+      "examples": "DROP INDEX index_name;"
+    },
+    {
+      "name": "PRAGMA",
+      "examples": "PRAGMA user_version;\nPRAGMA table_info(table_name);"
+    },
+    {
+      "name": "JOIN",
+      "examples": "SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.id;\nSELECT * FROM table1 LEFT JOIN table2 ON table1.id = table2.id;\nSELECT * FROM table1 RIGHT JOIN table2 ON table1.id = table2.id;"
+    },
+    {
+      "name": "GROUP BY & ORDER BY",
+      "examples": "SELECT column1, COUNT(*) FROM table_name GROUP BY column1;\nSELECT * FROM table_name ORDER BY column1 ASC;\nSELECT * FROM table_name ORDER BY column1 DESC;"
+    }
+  ]

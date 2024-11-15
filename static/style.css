@@ -548,6 +548,10 @@ body nav{
     box-sizing: border-box;
 }
 
+.sqlite_button_div{
+    margin-top: 10px;
+}
+
 .sqlite_output{
     height: 70vh;
     overflow-y: auto;

@@ -3,6 +3,20 @@ let fileName = "exported_database.db";
 const sqliteTable = document.querySelector('.sqlite_table');
 const output = document.querySelector('.sqlite_output');
 
+fetch("./resource/sqlite_prompt.json").then((response)=>{
+    return response.json();
+}).then((data)=>{
+    let buttonDiv = document.querySelector(".sqlite_button_div");
+
+    data.forEach((d)=>{
+        console.log(d);
+    });
+}).catch((error=>{
+
+}));
+
+
+//載入db檔案
 document.querySelector('.sqlite_input').addEventListener('change', async (event) => {
     const file = event.target.files[0];
     if (!file) {
