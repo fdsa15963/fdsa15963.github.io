@@ -567,8 +567,7 @@ body nav{
 
 .sqlite_output thead > tr > th{
     padding: 10px;
-    background-color: var(--table-head-background);
-    color: var(--body-font-opposite-color);
+    background-color: var(--area-background);
 }
 
 .sqlite_output tbody > tr > td{
