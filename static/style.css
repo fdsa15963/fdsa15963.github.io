@@ -2,6 +2,7 @@
 :root{
     --body-background: #eaefe6;
     --body-font-color: #666666;
+    --body-font-opposite-color: #ffffff;
     --body-light-font-color: #ffffff;
     --menu-background: #a7c3a7;
     --menu-select-font-color: #333333;
@@ -10,7 +11,8 @@
     --area-background: #fcfcfc;
     --title-font-color: #333333;
     --en-title-font-color:#666666;
-    --course-list-odd-background: #eaefe6;
+    --table-head-background: #809186;
+    --table-list-odd-background: #eaefe6;
     --course-list-red-font: #f78da7;
     --button-background: #809186;
     --button-hover-background: #A9C3A7;
@@ -28,14 +30,16 @@
 html[data-theme=dark]{
     --body-background: #111111;
     --body-font-color: #CFCFD1;
+    --body-font-opposite-color: #666666;
     --menu-background: #363636;
     --menu-select-font-color: #96b97d;
+    --table-head-background: #CFCFD1;
     --bulletin-font-color: #f2dede;
     --bulletin-background-color: #7c3331;
     --area-background: #242424;
     --title-font-color: #96b97d;
     --en-title-font-color: #527539;
-    --course-list-odd-background: #363636;
+    --table-list-odd-background: #363636;
     --course-list-red-font: rgb(197, 54, 54);
     --button-background: #363636;
     --button-hover-background: #565656;
@@ -484,10 +488,17 @@ body nav{
 
 
 /* SQLite Viewer */
+.sqlite_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .sqlite_sidebar{
-    width: 250px; /* 設定左側欄位的固定寬度 */
+    width: 300px; /* 設定左側欄位的固定寬度 */
     border-right: 1px solid #ddd;
-    padding: 10px;
+    padding: 0 10px 20px 10px;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -495,21 +506,77 @@ body nav{
 .sqlite_table{
     border-collapse: collapse;
     width: 100%;
-    margin-top: 20px;
+}
+
+.sqlite_table > details{
+    margin-bottom: 10px;
+}
+
+.sqlite_table > details > summary > img{
+    width: 20px;
+    transform: translate(10px, 5px);
+    cursor: pointer;
+}
+
+.sqlite_table > details > div{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.sqlite_table > details > div > span{
+    padding: 2px;
+    margin-left: 5px;
+    border: var(--body-font-color) solid 1px;
+    background-color: var();
 }
 
 .sqlite_main{
     flex-grow: 1;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     box-sizing: border-box;
     overflow-y: auto;
     min-width: 400px; /* 設定右側欄位的最小寬度 */
+    max-width: 1600px;
 }
 
 .sqlite_main textarea{
     width: 100%;
     height: 100px;
     margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sqlite_output{
+    height: 70vh;
+    overflow-y: auto;
+    margin-top: 20px;
+    background-color: var(--area-background);
+    border: var(--body-font-color) solid 1px;
+}
+
+.sqlite_output table{
+    width: 100%;
+}
+
+.sqlite_output thead{
+    position: sticky;
+    top: 0;
+}
+
+.sqlite_output thead > tr > th{
+    padding: 10px;
+    background-color: var(--table-head-background);
+    color: var(--body-font-opposite-color);
+}
+
+.sqlite_output tbody > tr > td{
+    padding: 5px;
+}
+
+.sqlite_output tbody > tr:nth-child(2n+1){
+    background-color: var(--table-list-odd-background);
 }
 
 

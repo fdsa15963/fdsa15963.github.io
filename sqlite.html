@@ -34,15 +34,15 @@
             <nav class="main_nav">
 
                 <div class="sqlite_sidebar">
-                    <h3>匯入資料表</h3>
+                    <div class="sqlite_title">匯入資料表</div>
                     <input type="file" class="sqlite_input" accept=".sqlite,.db" />
-                    <h4>資料表列表</h4>
-                    <ul id="sqlite_table"></ul>
+                    <div class="sqlite_title">資料表列表</div>
+                    <div class="sqlite_table"></div>
                 </div>
                 <div class="sqlite_main">
-                    <h1>SQLite Viewer</h1>
+                    <div class="sqlite_title">SQLite Viewer</div>
                     <textarea class="sqlite_commit" placeholder="輸入 SQL 語法，例如：SELECT * FROM table_name;"></textarea>
-                    <button id="sqlite_commit_run">執行 SQL 語法</button>
+                    <button class="sqlite_commit_run">執行 SQL 語法</button>
                     <div class="sqlite_output"></div>
                 </div>
 
@@ -51,7 +51,9 @@
             </nav>
 
         </nav>
+        <script src="/static/sql-wasm.js"></script>
         <script src="/static/script.js"></script>
+        <script src="/static/sqlite.js"></script>
         
     </body>
 </html>
