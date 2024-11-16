@@ -4,26 +4,18 @@
     --body-font-color: #666666;
     --body-font-opposite-color: #ffffff;
     --body-light-font-color: #ffffff;
+    --body-red-font-color: #f78da7;
     --menu-background: #a7c3a7;
     --menu-select-font-color: #333333;
-    --bulletin-font-color: #a94442;
-    --bulletin-background-color: #f2dede;
     --area-background: #fcfcfc;
     --title-font-color: #333333;
     --en-title-font-color:#666666;
     --table-head-background: #c9e0b6;
     --table-list-odd-background: #eaefe6;
-    --course-list-red-font: #f78da7;
+    --table-hover-background: #f7f7f7;
     --button-background: #809186;
     --button-hover-background: #A9C3A7;
     --button-shadow: #cccccc;
-    --elearn-login-user-icon: url("/images/user.png");
-    --elearn-login-lock-icon: url("/images/lock.png");
-    --elearn-float-nav-close-icon: url("/images/close.png");
-    --select-courses-this-page-background-color: #A9C3A7;
-    --select-courses-this-page-font-color: #ffffff;
-    --ambulace-table-error-font-color: #f78da7;
-
 }
 
 /* 深色模式顏色設定 */
@@ -31,24 +23,18 @@ html[data-theme=dark]{
     --body-background: #111111;
     --body-font-color: #CFCFD1;
     --body-font-opposite-color: #666666;
+    --body-red-font-color: rgb(197, 54, 54);
     --menu-background: #363636;
     --menu-select-font-color: #96b97d;
-    --table-head-background: #5f5f62;
-    --bulletin-font-color: #f2dede;
-    --bulletin-background-color: #7c3331;
     --area-background: #242424;
     --title-font-color: #96b97d;
     --en-title-font-color: #527539;
+    --table-head-background: #5f5f62;
     --table-list-odd-background: #363636;
-    --course-list-red-font: rgb(197, 54, 54);
+    --table-hover-background: #f7f7f7;
     --button-background: #363636;
     --button-hover-background: #565656;
     --button-shadow: #323232;
-    --elearn-login-user-icon: url("/images/user_white.png");
-    --elearn-login-lock-icon: url("/images/lock_white.png");
-    --elearn-float-nav-close-icon: url("/images/close_white.png");
-    --select-courses-this-page-background-color: #363636;
-    --select-courses-this-page-font-color: #96b97d;
 }
 
 
@@ -532,12 +518,9 @@ body nav{
 }
 
 .sqlite_main{
-    flex-grow: 1;
+    flex: 90%;
     padding: 0 20px 20px 20px;
     box-sizing: border-box;
-    overflow-y: auto;
-    min-width: 400px; /* 設定右側欄位的最小寬度 */
-    max-width: 1600px;
 }
 
 .sqlite_main textarea{
@@ -580,6 +563,10 @@ body nav{
     white-space: nowrap;        /* 文字不換行 */
     overflow: hidden;           /* 超出邊界隱藏 */
     text-overflow: ellipsis;    /* 多的文字以...表示 */
+}
+
+.sqlite_output tbody > tr > td:hover{
+    background-color: var(--table-hover-background);
 }
 
 .sqlite_output tbody > tr:nth-child(2n+1){
