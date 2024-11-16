@@ -12,7 +12,7 @@ fetch("/resource/sqlite_prompt.json").then((response)=>{
         let button = document.createElement("button");
 
         button.textContent = d.name;
-        button.setAttribute("onclick", `function(){document.querySelector(".sqlite_commit").textContent = ${d.examples};}`);
+        button.setAttribute("onclick", `exampleButton('${d.example}')`);
 
         buttonDiv.appendChild(button);
     });
@@ -181,4 +181,8 @@ function viewValue(element) {
     let text = element.title;
     
     document.querySelector(".sqlite_value").value = text;
+}
+
+function exampleButton(text){
+    document.querySelector(".sqlite_commit").textContent = text;
 }
