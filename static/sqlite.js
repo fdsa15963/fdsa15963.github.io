@@ -12,9 +12,7 @@ fetch("/resource/sqlite_prompt.json").then((response)=>{
         let button = document.createElement("button");
 
         button.textContent = d.name;
-        button.addEventListener('click', ()=>{
-            document.querySelector(".sqlite_commit").textContent = d.examples;
-        });
+        button.setAttribute("onclick", `function(){document.querySelector(".sqlite_commit").textContent = ${d.examples};}`);
 
         buttonDiv.appendChild(button);
     });
@@ -102,14 +100,14 @@ document.querySelector('.sqlite_commit_run').addEventListener('click', () => {
     }
 });
 
-function loadTable(tableName, page=1) {
+function loadTable(tableName, page=1, limit=50) {
     if (!db) {
         alert("請先載入資料庫！");
         return;
     }
 
     try {
-        let commit = `SELECT * FROM ${tableName} LIMIT 50 OFFSET ${(page - 1) * 50};`;  // 限制顯示 50 筆資料
+        let commit = `SELECT * FROM ${tableName} LIMIT ${limit} OFFSET ${(page - 1) * limit};`;  // 限制顯示 50 筆資料
 
         document.querySelector(".sqlite_commit").value = commit;
 
