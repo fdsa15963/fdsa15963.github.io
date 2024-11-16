@@ -1,50 +1,50 @@
 [
     {
-      "name": "SELECT",
-      "examples": "SELECT * FROM table_name;\nSELECT column1, column2 FROM table_name;\nSELECT * FROM table_name WHERE column1 = 'value';\nSELECT * FROM table_name LIMIT 10;"
+        "examples": "SELECT * FROM table_name; -- 查詢所有資料\nSELECT column1, column2 FROM table_name; -- 查詢特定欄位的資料\nSELECT * FROM table_name WHERE column1 = 'value'; -- 使用條件查詢資料\nSELECT * FROM table_name LIMIT 10; -- 限制查詢的結果數量",
+        "name": "SELECT"
     },
     {
-      "name": "INSERT",
-      "examples": "INSERT INTO table_name (column1, column2) VALUES ('value1', 'value2');\nINSERT INTO table_name (column1, column2) VALUES ('value1', 'value2'), ('value3', 'value4');"
+        "examples": "INSERT INTO table_name (column1, column2) VALUES ('value1', 'value2'); -- 插入一筆資料\nINSERT INTO table_name (column1, column2) VALUES ('value1', 'value2'), ('value3', 'value4'); -- 插入多筆資料",
+        "name": "INSERT"
     },
     {
-      "name": "UPDATE",
-      "examples": "UPDATE table_name SET column1 = 'new_value' WHERE column2 = 'value';"
+        "examples": "UPDATE table_name SET column1 = 'new_value' WHERE column2 = 'value'; -- 更新資料",
+        "name": "UPDATE"
     },
     {
-      "name": "DELETE",
-      "examples": "DELETE FROM table_name WHERE column1 = 'value';"
+        "examples": "DELETE FROM table_name WHERE column1 = 'value'; -- 刪除資料",
+        "name": "DELETE"
     },
     {
-      "name": "CREATE TABLE",
-      "examples": "CREATE TABLE table_name (column1 TEXT, column2 INTEGER, column3 REAL);"
+        "examples": "CREATE TABLE table_name (column1 TEXT, column2 INTEGER, column3 REAL); -- 建立一個資料表",
+        "name": "CREATE TABLE"
     },
     {
-      "name": "DROP TABLE",
-      "examples": "DROP TABLE IF EXISTS table_name;"
+        "examples": "DROP TABLE IF EXISTS table_name; -- 刪除資料表",
+        "name": "DROP TABLE"
     },
     {
-      "name": "ALTER TABLE",
-      "examples": "ALTER TABLE table_name ADD COLUMN new_column TEXT;\nALTER TABLE table_name RENAME TO new_table_name;"
+        "examples": "ALTER TABLE table_name ADD COLUMN new_column TEXT; -- 新增欄位\nALTER TABLE table_name RENAME TO new_table_name; -- 更改資料表名稱",
+        "name": "ALTER TABLE"
     },
     {
-      "name": "CREATE INDEX",
-      "examples": "CREATE INDEX index_name ON table_name (column1);"
+        "examples": "CREATE INDEX index_name ON table_name (column1); -- 建立索引",
+        "name": "CREATE INDEX"
     },
     {
-      "name": "DROP INDEX",
-      "examples": "DROP INDEX index_name;"
+        "examples": "DROP INDEX index_name; -- 刪除索引",
+        "name": "DROP INDEX"
     },
     {
-      "name": "PRAGMA",
-      "examples": "PRAGMA user_version;\nPRAGMA table_info(table_name);"
+        "examples": "PRAGMA user_version; -- 查詢資料庫版本\nPRAGMA table_info(table_name); -- 查看資料表結構",
+        "name": "PRAGMA"
     },
     {
-      "name": "JOIN",
-      "examples": "SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.id;\nSELECT * FROM table1 LEFT JOIN table2 ON table1.id = table2.id;\nSELECT * FROM table1 RIGHT JOIN table2 ON table1.id = table2.id;"
+        "examples": "SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.id; -- 內部聯結查詢\nSELECT * FROM table1 LEFT JOIN table2 ON table1.id = table2.id; -- 左外部聯結查詢\nSELECT * FROM table1 RIGHT JOIN table2 ON table1.id = table2.id; -- 右外部聯結查詢",
+        "name": "JOIN"
     },
     {
-      "name": "GROUP BY & ORDER BY",
-      "examples": "SELECT column1, COUNT(*) FROM table_name GROUP BY column1;\nSELECT * FROM table_name ORDER BY column1 ASC;\nSELECT * FROM table_name ORDER BY column1 DESC;"
+        "examples": "SELECT column1, COUNT(*) FROM table_name GROUP BY column1; -- 使用 GROUP BY 進行分組\nSELECT * FROM table_name ORDER BY column1 ASC; -- 升冪排序\nSELECT * FROM table_name ORDER BY column1 DESC; -- 降冪排序",
+        "name": "GROUP BY & ORDER BY"
     }
-  ]
+]
