@@ -102,14 +102,18 @@ document.querySelector('.sqlite_commit_run').addEventListener('click', () => {
     }
 });
 
-function loadTable(tableName) {
+function loadTable(tableName, page=1) {
     if (!db) {
         alert("請先載入資料庫！");
         return;
     }
 
     try {
-        const result = db.exec(`SELECT * FROM ${tableName} LIMIT 50`); // 限制顯示 50 筆資料
+        let commit = `SELECT * FROM ${tableName} LIMIT 50 OFFSET ${(page - 1) * 50};`;  // 限制顯示 50 筆資料
+
+        document.querySelector(".sqlite_commit").value = commit;
+
+        const result = db.exec(commit); 
 
         if (result.length > 0) {
             renderTable(result[0]);
@@ -145,6 +149,7 @@ function renderTable(result) {
             const td = document.createElement('td');
             td.textContent = cell !== null ? cell : 'NULL';
             td.setAttribute("title", td.textContent);
+            td.setAttribute("onclick", "viewValue(this);");
             dataRow.appendChild(td);
         });
         tbody.appendChild(dataRow);
@@ -173,3 +178,9 @@ document.querySelector(".sqlite_export_db").addEventListener('click', () => {
 
     URL.revokeObjectURL(url);
 });
+
+function viewValue(element) {
+    let text = element.title;
+    
+    document.querySelector(".sqlite_value").value = text;
+}

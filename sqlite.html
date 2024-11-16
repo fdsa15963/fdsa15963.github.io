@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-sale=1.0" />
         <title>SQLite預覽器</title>
-        <link rel="icon" href="/images/icon.ico">
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="icon" href="./images/icon.ico">
+        <link rel="stylesheet" href="./static/style.css" />
         
     </head>
 
@@ -41,7 +41,11 @@
                 </div>
                 <div class="sqlite_main">
                     <div class="sqlite_title">SQLite Viewer</div>
-                    <textarea class="sqlite_commit" placeholder="輸入 SQL 語法，例如：SELECT * FROM table_name;"></textarea>
+                    <div class="sqlite_textarea_div">
+                        <textarea class="sqlite_commit" placeholder="輸入 SQL 語法，例如：SELECT * FROM table_name;"></textarea>
+                        <textarea class="sqlite_value" placeholder="檢視窗格"></textarea>
+                    </div>
+                    
                     <div class="sqlite_button_div"></div>
                     <div class="sqlite_button_div">
                         <button class="sqlite_commit_run">執行 SQL 語法</button>
@@ -56,9 +60,9 @@
             </nav>
 
         </nav>
-        <script src="/static/sql-wasm.js"></script>
-        <script src="/static/script.js"></script>
-        <script src="/static/sqlite.js"></script>
+        <script src="./static/sql-wasm.js"></script>
+        <script src="./static/script.js"></script>
+        <script src="./static/sqlite.js"></script>
         
     </body>
 </html>
